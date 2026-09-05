@@ -51,3 +51,12 @@ git init
 devpod up . --id demo-client
 devpod ssh demo-client
 
+
+
+mkdir -p ~/.config/containers
+vi ~/.config/containers/containers.conf
+```ini
+[containers]
+label = false
+```
+
