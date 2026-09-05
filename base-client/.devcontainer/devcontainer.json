@@ -1,0 +1,17 @@
+{
+  "name": "my-custom-dev",
+  "build": {
+    "context": "..",
+    "dockerfile": "docker/Dockerfile",
+    "args": {
+      "USER_UID": "1000",
+      "USER_GID": "1000"
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "mise trust && mise install || true",
+  "containerEnv": {
+    "EDITOR": "nvim",
+    "VISUAL": "nvim"
+  }
+}
