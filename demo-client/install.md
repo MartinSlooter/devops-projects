@@ -32,31 +32,35 @@ devpod delete client-acme
 systemctl --user enable --now podman.socket
 
 # Install DevPod CLI
+```bash
 curl -L -o devpod "https://github.com/loft-sh/devpod/releases/latest/download/devpod-linux-amd64"
 sudo install -c -m 0755 devpod /usr/local/bin/devpod
 devpod version
+```
 
-
-
+```bash
 devpod provider add docker
 devpod provider set-options docker --option DOCKER_PATH=/usr/bin/podman
 devpod provider set-options docker --option DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 devpod provider use docker
+```
 
-
-kdir -p ~/clients/demo-client
+```bash
+mkdir -p ~/clients/demo-client
 cd ~/clients/demo-client
 git init
+```
 
-devpod up . --id demo-client
-devpod ssh demo-client
-
-
-
+```bash
 mkdir -p ~/.config/containers
 vi ~/.config/containers/containers.conf
+```
 ```ini
 [containers]
 label = false
 ```
 
+```bash
+devpod up . --id demo-client
+devpod ssh demo-client
+```
