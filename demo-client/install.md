@@ -12,7 +12,7 @@ devpod provider set-options docker \
 # 4. Make it the default
 devpod provider use docker
 
-
+-------
 
 # Always name workspaces per client
 devpod up . --id client-acme
